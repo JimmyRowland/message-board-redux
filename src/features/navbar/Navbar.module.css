@@ -1,0 +1,141 @@
+
+
+:root{
+  --success: #F2F4F4;
+  --grey : #72757B;
+  --brown: #605D60;
+  --dark: #2A2C34;
+  --main: #7A7C74;
+}
+.navbar{
+  display: flex;
+  flex-basis: 100%;
+  flex-direction: row;
+  background-color: var(--dark);
+  color: white;
+  align-items: center;
+  padding: 1.5vw 0;
+  font-size: 2vw;
+}
+.placeholder{
+  flex-grow: 0.5;
+}
+.navbarRight{
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex:1;
+}
+.navLeft{
+  padding-left: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex:1.5;
+}
+.navButton{
+  display: flex;
+  min-width: 60px;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.container{
+  padding-top: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.mbHeader{
+  background-color: var(--dark);
+  color: white;
+  padding: 10px;
+}
+
+.messageBoard{
+  z-index: 2;
+
+}
+.mbMsgContainer div:nth-child(even){
+  background-color: var(--grey);
+}
+.mbMsgContainer div:nth-child(odd){
+  background-color: var(--brown);
+}
+.mbMsgContainer{
+  font-size: 2vw;
+}
+.mbMsg{
+  justify-content: center;
+  display: flex;
+}
+.mbMsg>span{
+  animation-name: opacity;
+  animation-duration: 0.5s;
+}
+.mbForm{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 20vw;
+  align-items: center;
+  background-color: var(--main);
+}
+.msgInputTextarea{
+  width: 50vw;
+  height: 10vw;
+  background-color: var(--main);
+}
+.mbH1{
+  font-size: 2.5vw;
+}
+.msgSubmitBtn{
+  width: 50vw;
+  font-size: 1.5vw;
+  background-color: var(--success);
+}
+.background{
+  display: flex;
+  position: fixed;
+  flex-direction: row;
+  width: 100%;
+  height: 101vh;
+  z-index: -1;
+  transform: translateY(-6vw);
+}
+.black{
+  background-color: var(--dark);
+  flex: 1;
+}
+.white{
+  flex: 1;
+  background-color: var(--success);
+}
+.grey{
+  flex: 2;
+  background-color: var(--grey);
+}
+@media only screen and (max-width: 800px) {
+  .mbH1{
+    font-size: 3vw;
+  }
+}
+@keyframes opacity {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+.description{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  align-self: center;
+  width: 70vw;
+  background-color: var(--brown);
+  font-size: 3vw;
+  height: 20vh;
+}
