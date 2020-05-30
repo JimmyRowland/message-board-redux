@@ -3,12 +3,12 @@ import logo from './logo.svg';
 import './App.css';
 import {MessageBoard} from "./features/messageboard/MessageBoard";
 import {FlaggyFlag} from "./features/flaggyFlag/FlaggyFlag";
-import {Navbar} from "./features/navbar/Navbar";
+import {TopMenu} from "./features/navbar/TopMenu";
 
 function App() {
   return (
     <div className="App">
-        <Navbar/>
+        <TopMenu/>
         <FlaggyFlag />
         <MessageBoard/>
 

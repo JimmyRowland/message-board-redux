@@ -1,11 +1,8 @@
 import React, {useState} from 'react';
-import {useSelector, useDispatch} from 'react-redux';
 
-import styles from './Navbar.module.css';
+import styles from './TopMenu.module.css';
 
-export function Navbar() {
-    const [input, setInput] = useState('');
-
+export function TopMenu() {
     return (
         <nav>
             <div className={styles.navbar}>
