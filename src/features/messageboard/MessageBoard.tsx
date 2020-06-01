@@ -4,6 +4,7 @@ import {
   addMessage,
   clearMessages,
     shuffle,
+    deleteMessage,
   selectMessages,
 } from './messageBoardSlice';
 import styles from './MessageBoard.module.css';
@@ -28,7 +29,8 @@ export function MessageBoard() {
           </div>
           <div className={styles.mbMsgContainer} id="mb-msg-container">
             {messages.map((message,index)=>{
-              return <div className={styles.mbMsg} onClick={()=>{setPopupmessage({index: index, message: message});dispatch(shuffle()); console.log(messages); }}><span>{message}</span></div>
+              return <div key={index} className={styles.mbMsg}><span onClick={()=>{setPopupmessage({index: index, message: message});dispatch(shuffle()); console.log(messages); }}>{message}</span>
+                <button onClick ={()=>{dispatch(deleteMessage(index))}}>delete</button></div>
             })}
           </div>
           <div className={styles.mbForm}>

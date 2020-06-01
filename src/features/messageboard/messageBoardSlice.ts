@@ -3,7 +3,7 @@ import { AppThunk, RootState } from '../../app/store';
 import {act} from "react-dom/test-utils";
 
 interface MessagesState {
-  value: string[];
+  value: Array<string>;
 }
 
 
@@ -17,8 +17,17 @@ export const messageBoardSlice = createSlice({
   initialState,
   reducers: {
     addMessage: (state, action: PayloadAction<string>) => {
-      state.value.push(action.payload);
+      let value = state.value.slice();
+      value.push(action.payload)
+      return {value:value}
     },
+      deleteMessage: (state, action: PayloadAction<number>) => {
+
+      // let value = state.value.slice();
+        // value.splice(action.payload,1);
+        state.value.splice(action.payload,1)
+        // return {value:value};
+      },
     clearMessages: state => {
       state.value = [];
     },
@@ -29,7 +38,7 @@ export const messageBoardSlice = createSlice({
   },
 });
 
-export const { addMessage, clearMessages, shuffle} = messageBoardSlice.actions;
+export const { addMessage, clearMessages, shuffle, deleteMessage} = messageBoardSlice.actions;
 
 
 export const selectMessages = (state: RootState) => state.messages.value;
