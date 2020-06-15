@@ -1,0 +1,4 @@
+{
+  "mongoURI": "mongodb+srv://admin:a_xmoCM96H;5Qz9YvrPB@messageboard-bix5o.mongodb.net",
+  "database": "messageboard?retryWrites=true&w=majority"
+}

@@ -1,43 +1,37 @@
 {
   "name": "message-board-redux",
-  "version": "0.1.0",
-  "private": true,
-  "homepage": "./",
+  "version": "1.0.0",
+  "description": "message board",
+  "main": "server.js",
+  "repository": "https://github.com/JimmyRowland/message-board-redux.git",
+  "author": "Jimmy Rowland <tian_yu@student.smc.edu>",
+  "license": "MIT",
   "dependencies": {
-    "@reduxjs/toolkit": "^1.2.5",
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
-    "@types/jest": "^24.0.0",
-    "@types/node": "^12.0.0",
-    "@types/react": "^16.9.0",
-    "@types/react-dom": "^16.9.0",
-    "@types/react-redux": "^7.1.7",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-redux": "^7.2.0",
-    "react-scripts": "3.4.1",
+    "@types/bcrypt": "^3.0.0",
+    "@types/body-parser": "^1.19.0",
+    "@types/cors": "^2.8.6",
+    "@types/express": "^4.17.6",
+    "@types/mongodb": "^3.5.20",
+    "@types/mongoose": "^5.7.24",
+    "@types/morgan": "^1.9.1",
+    "@types/node": "^14.0.13",
+    "body-parser": "^1.19.0",
+    "concurrently": "^5.2.0",
+    "express": "^4.17.1",
+    "mongodb": "^3.5.9",
+    "mongoose": "^5.9.18",
+    "morgan": "^1.10.0",
     "typescript": "~3.8.2"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "client-install": "npm install --prefix client",
+    "start": "node server/server.ts",
+    "server": "nodemon server/server.ts",
+    "client": "yarn --prefix client",
+    "dev": "concurrently \"yarn server\" \"yarn client\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "devDependencies": {
+    "nodemon": "^2.0.4"
   }
 }

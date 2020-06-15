@@ -29,7 +29,7 @@ export function MessageBoard() {
           </div>
           <div className={styles.mbMsgContainer} id="mb-msg-container">
             {messages.map((message,index)=>{
-              return <div key={index} className={styles.mbMsg}><span onClick={()=>{setPopupmessage({index: index, message: message});dispatch(shuffle()); console.log(messages); }}>{message}</span>
+              return <div key={index} className={styles.mbMsg}><span onClick={()=>{setPopupmessage({index: index, message: message.message}); console.log(messages); }}>{message.message} {message.date.getDate()}</span>
                 <button onClick ={()=>{dispatch(deleteMessage(index))}}>delete</button></div>
             })}
           </div>
