@@ -81,9 +81,8 @@ interface modifyMessageInput{
         }
     });
 
-    router.get('', async (req,res)=>{
+    router.post('', async (req,res)=>{
         const messages = await MessageModel.find();
-        console.log(messages);
         res.status(200).json({ success: false, messages: messages })
     }); 
 })();

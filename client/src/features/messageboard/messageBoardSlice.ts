@@ -77,13 +77,14 @@ export const fetchMessages = (): AppThunk => (dispatch,getState) => {
     let messages = getState().messages.value.slice();
     if (messages.length === 0) {
         const url = `/api/message`;
-        fetch(url)
+        fetch(url,{headers: {
+                'Content-Type': 'application/json',
+            },method: 'POST',mode: 'cors',})
             .then((response) => {
                 return response.json();
             })
             .then((json) => {
                 messages = json.messages;
-                // console.log(messages,json)
                 return messages.map((value: any) => {
                     return {
                         _id: value._id,
@@ -93,7 +94,6 @@ export const fetchMessages = (): AppThunk => (dispatch,getState) => {
                 });
             })
             .then((resMessages: Array<Message>) => {
-                // console.log(resPosts);
                 // Temp limiting posts
                 dispatch(updateMessages(resMessages));
                 // for (let message of resMessages){

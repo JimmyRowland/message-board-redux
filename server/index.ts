@@ -5,7 +5,7 @@ import routes from "./routes/index"
 import * as path from "path";
 
 (async()=>{
-    const PORT = process.env.PORT || 8080
+    const PORT = process.env.PORT || 5000
     const app = express();
     const devconnection: string|undefined = process.env.DB_STRING;
     if(devconnection){
