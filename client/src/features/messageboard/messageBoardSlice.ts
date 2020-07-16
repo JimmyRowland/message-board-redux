@@ -13,7 +13,7 @@ interface Message {
     _id: string
 }
 
-
+const PORT = process.env.PORT || 8080
 
 const initialState: MessagesState = {
     value: [
@@ -76,7 +76,7 @@ export const addMessageAsync = (message: string): AppThunk => dispatch => {
 export const fetchMessages = (): AppThunk => (dispatch,getState) => {
     let messages = getState().messages.value.slice();
     if (messages.length === 0) {
-        const url = "http://localhost:4000/api/message";
+        const url = `http://localhost:${PORT}/api/message`;
         fetch(url)
             .then((response) => {
                 return response.json();
@@ -107,7 +107,7 @@ export const fetchMessages = (): AppThunk => (dispatch,getState) => {
 
 export const postNewMessage = (message: string): AppThunk => (dispatch) => {
     console.log("!!postAsync");
-    const url = "http://localhost:4000/api/message/add";
+    const url = `http://localhost:${PORT}/api/message/add`;
     fetch(url,{method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -126,7 +126,7 @@ export const postNewMessage = (message: string): AppThunk => (dispatch) => {
 
 export const modifyMessageAsync = (message: string, _id: string): AppThunk => (dispatch) => {
     console.log("!!postAsync");
-    const url = "http://localhost:4000/api/message/modify";
+    const url = `http://localhost:${PORT}/api/message/modify`;
     fetch(url,{method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -146,7 +146,7 @@ export const modifyMessageAsync = (message: string, _id: string): AppThunk => (d
 
 export const deleteMessageAsync = (_id: string): AppThunk => (dispatch) => {
     console.log("!!postAsync");
-    const url = "http://localhost:4000/api/message/delete";
+    const url = `http://localhost:${PORT}/api/message/delete`;
     fetch(url,{method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -166,7 +166,7 @@ export const deleteMessageAsync = (_id: string): AppThunk => (dispatch) => {
 
 export const deleteAllMessageAsync = (): AppThunk => (dispatch) => {
     console.log("!!postAsync");
-    const url = "http://localhost:4000/api/message/deleteall";
+    const url = `http://localhost:${PORT}/api/message/deleteall`;
     fetch(url,{method: 'POST',
         headers: {
             'Content-Type': 'application/json',
