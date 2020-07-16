@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "team_sporty",
   "scripts": {
-    "dev": "nodemon --exec ts-node index.ts",
-    "lint:fix": "./node_modules/.bin/eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
-    "heroku-postbuild": "cd ../client && yarn install && yarn build"
+    "dev": "./server/node_modules/.bin/nodemon --exec ts-node ./server/index.ts",
+    "lint:fix": "./server/node_modules/.bin/eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
+    "heroku-postbuild": "cd ./client && yarn install && yarn build"
   },
   "dependencies": {
     "@typegoose/typegoose": "^7.2.0",
