@@ -53,10 +53,6 @@ export function MessageBoard() {
             </h1>
           </div>
           <div className={styles.mbMsgContainer} id="mb-msg-container">
-            {messages.map((message,index)=>{
-              return <div key={index} className={styles.mbMsg}><span onClick={()=>{setPopupmessage({index: index, message: message.message, _id:message._id}); console.log(messages); }}>{message.message} {message.date.getDate()}</span>
-                <button onClick ={()=>{handleDeleteMessage(message._id)}}>delete</button></div>
-            })}
             {trail.map(({x,...rest},index)=>{
               return <animated.div style={{ ...rest, transform: interpolate([x],x => `translate3d(0,${x}px,0)`) }} key={index} className={styles.mbMsg}><span onClick={()=>{setPopupmessage({index: index, message: messages[index].message, _id:messages[index]._id}); console.log(messages); }}>{messages[index].message} {messages[index].date.getDate()}</span>
                 <button onClick ={()=>{handleDeleteMessage(messages[index]._id)}}>delete</button></animated.div>

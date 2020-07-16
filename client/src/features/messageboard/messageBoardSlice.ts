@@ -61,7 +61,7 @@ export const messageBoardSlice = createSlice({
             state.value = [];
         },
         shuffle: state => {
-            console.log("shuffle");
+            // console.log("shuffle");
             state.value.sort(() => Math.random() - 0.5);
         },
         updateMessages: (state, action: PayloadAction<Array<Message>>)=>{
@@ -106,7 +106,7 @@ export const fetchMessages = (): AppThunk => (dispatch,getState) => {
 };
 
 export const postNewMessage = (message: string): AppThunk => (dispatch) => {
-    console.log("!!postAsync");
+    // console.log("!!postAsync");
     const url = `/api/message/add`;
     fetch(url,{method: 'POST',
         headers: {
@@ -125,7 +125,7 @@ export const postNewMessage = (message: string): AppThunk => (dispatch) => {
 };
 
 export const modifyMessageAsync = (message: string, _id: string): AppThunk => (dispatch) => {
-    console.log("!!postAsync");
+    // console.log("!!postAsync");
     const url = `/api/message/modify`;
     fetch(url,{method: 'POST',
         headers: {
@@ -145,7 +145,7 @@ export const modifyMessageAsync = (message: string, _id: string): AppThunk => (d
 };
 
 export const deleteMessageAsync = (_id: string): AppThunk => (dispatch) => {
-    console.log("!!postAsync");
+    // console.log("!!postAsync");
     const url = `/api/message/delete`;
     fetch(url,{method: 'POST',
         headers: {
@@ -165,7 +165,7 @@ export const deleteMessageAsync = (_id: string): AppThunk => (dispatch) => {
 };
 
 export const deleteAllMessageAsync = (): AppThunk => (dispatch) => {
-    console.log("!!postAsync");
+    // console.log("!!postAsync");
     const url = `/api/message/deleteall`;
     fetch(url,{method: 'POST',
         headers: {
