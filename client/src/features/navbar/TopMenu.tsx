@@ -10,8 +10,6 @@ export function TopMenu() {
                     <div>Home</div>
                 </div>
                 <div className={styles.navbarRight}>
-                    <div className={styles.navButton}>About</div>
-                    <div className={styles.navButton}>Project</div>
                     <div className={styles.navButton}
                          onClick={() => {
                              window.location.href = 'https://jimmyrowland.github.io/Portfolio/build/'}}>Portfolio
