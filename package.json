@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "./server/node_modules/.bin/nodemon --exec ts-node ./server/index.ts",
     "lint:fix": "./server/node_modules/.bin/eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
-    "heroku-postbuild": "cd ./client && yarn install && yarn build"
+    "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "dependencies": {
     "@typegoose/typegoose": "^7.2.0",
