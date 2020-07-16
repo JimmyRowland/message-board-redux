@@ -76,7 +76,7 @@ export const addMessageAsync = (message: string): AppThunk => dispatch => {
 export const fetchMessages = (): AppThunk => (dispatch,getState) => {
     let messages = getState().messages.value.slice();
     if (messages.length === 0) {
-        const url = `http://localhost:${PORT}/api/message`;
+        const url = `/api/message`;
         fetch(url)
             .then((response) => {
                 return response.json();
@@ -107,7 +107,7 @@ export const fetchMessages = (): AppThunk => (dispatch,getState) => {
 
 export const postNewMessage = (message: string): AppThunk => (dispatch) => {
     console.log("!!postAsync");
-    const url = `http://localhost:${PORT}/api/message/add`;
+    const url = `/api/message/add`;
     fetch(url,{method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -126,7 +126,7 @@ export const postNewMessage = (message: string): AppThunk => (dispatch) => {
 
 export const modifyMessageAsync = (message: string, _id: string): AppThunk => (dispatch) => {
     console.log("!!postAsync");
-    const url = `http://localhost:${PORT}/api/message/modify`;
+    const url = `/api/message/modify`;
     fetch(url,{method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -146,7 +146,7 @@ export const modifyMessageAsync = (message: string, _id: string): AppThunk => (d
 
 export const deleteMessageAsync = (_id: string): AppThunk => (dispatch) => {
     console.log("!!postAsync");
-    const url = `http://localhost:${PORT}/api/message/delete`;
+    const url = `/api/message/delete`;
     fetch(url,{method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -166,7 +166,7 @@ export const deleteMessageAsync = (_id: string): AppThunk => (dispatch) => {
 
 export const deleteAllMessageAsync = (): AppThunk => (dispatch) => {
     console.log("!!postAsync");
-    const url = `http://localhost:${PORT}/api/message/deleteall`;
+    const url = `/api/message/deleteall`;
     fetch(url,{method: 'POST',
         headers: {
             'Content-Type': 'application/json',
